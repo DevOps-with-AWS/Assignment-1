@@ -8,4 +8,4 @@ RUN chown -R docker:docker /usr/share/nginx/ && chown -R docker:docker /var/run/
 USER docker 
 EXPOSE 8080
 WORKDIR /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx" "-g" "daemon off;"]
