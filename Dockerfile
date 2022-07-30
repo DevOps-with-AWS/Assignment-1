@@ -1,4 +1,5 @@
 FROM nginx:latest
+RUN adduser --home /home/docker docker 
 USER docker:docker
 ENV APP_HOME /usr/share/nginx/html
 COPY --chown=docker:docker maintenance-page/*.* /usr/share/nginx/html/
