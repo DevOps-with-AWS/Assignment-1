@@ -1,4 +1,5 @@
 FROM nginx:latest
+RUN rm * -rf /usr/share/nginx/html/
 RUN adduser --home /home/docker docker 
 USER docker:docker
 ENV APP_HOME /usr/share/nginx/html
