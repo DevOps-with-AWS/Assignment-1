@@ -16,6 +16,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag dockersampath/my-image
+    - name: docker run
+      run: docker run -d -p 8080:80 --name webpage dockersampath/my-image 
+    - name: check the container is running or not
+      run: docker ps 
   
       
     
