@@ -1,0 +1,19 @@
+name:Docker Build and Push to DockerHub
+on:
+  push:
+   branches: [ master ]
+  pull_request:
+    branches: [ master ]
+      
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build & Push Image
+      run: |
+        echo "${{ secrets.DOCKERHUB_USERNAME }}" | docker login -u "${{ secrets.DOCKERHUB_TOKEN }}" --password-stdin
+        docker image build -t dockersampath/webpage .
+        docker push dockersampath/webpage
