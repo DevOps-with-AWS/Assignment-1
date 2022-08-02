@@ -9,12 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Login to Docker Hub
-      uses: docker/login-action@v2
       with:
-        username: ${{ secrets.JFROG_USERNAME }}
-        password: ${{ secrets.API }}
+    - run: docker login -usampath853@gmail.com webpages.jfrog.io -p AKCp8mZwKi3nDGJYMkm1hvwQmLovDBLz1H3AhJQg2RzzwDFRE3ZGHLt3uiKnmu2DLEScfbm7h
     - run: docker image build -t webpages.jfrog.io/webpages-docker-local/webpage .
     - run: docker push webpages.jfrog.io/webpages-docker-local/webpage
 
